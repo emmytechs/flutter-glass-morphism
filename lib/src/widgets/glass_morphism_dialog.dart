@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../materials/glass_morphism_material.dart';
-import '../theme/glass_morphism_theme.dart';
 
 /// A dialog with glass morphism material design.
 ///
@@ -129,8 +128,6 @@ class _GlassMorphismDialogState extends State<GlassMorphismDialog>
 
   @override
   Widget build(BuildContext context) {
-    final theme = GlassMorphismTheme.of(context);
-
     return AnimatedBuilder(
       animation: _animationController,
       builder: (context, child) {
@@ -160,10 +157,13 @@ class _GlassMorphismDialogState extends State<GlassMorphismDialog>
                     children: [
                       if (widget.title != null) ...[
                         DefaultTextStyle(
-                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ) ??
+                          style: Theme.of(context)
+                                  .textTheme
+                                  .headlineSmall
+                                  ?.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                  ) ??
                               const TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -175,18 +175,20 @@ class _GlassMorphismDialogState extends State<GlassMorphismDialog>
                       ],
                       if (widget.content != null) ...[
                         DefaultTextStyle(
-                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                color: Colors.white70,
-                              ) ??
-                              const TextStyle(
-                                color: Colors.white70,
-                                fontSize: 14,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                        color: Colors.white70,
+                                      ) ??
+                                  const TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 14,
+                                  ),
                           child: widget.content!,
                         ),
                         const SizedBox(height: 24),
                       ],
-                      if (widget.actions != null && widget.actions!.isNotEmpty) ...[
+                      if (widget.actions != null &&
+                          widget.actions!.isNotEmpty) ...[
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: widget.actions!

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../materials/glass_morphism_material.dart';
-import '../theme/glass_morphism_theme.dart';
 
 /// A tab bar with glass morphism material design.
 ///
@@ -50,8 +49,6 @@ class GlassMorphismTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = GlassMorphismTheme.of(context);
-    
     return GlassMorphismMaterial(
       blurIntensity: blurIntensity ?? 12.0,
       opacity: opacity ?? 0.8,

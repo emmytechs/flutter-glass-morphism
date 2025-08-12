@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../materials/glass_morphism_material.dart';
-import '../theme/glass_morphism_theme.dart';
 
 /// A bottom sheet with glass morphism material design.
 ///
@@ -89,7 +88,8 @@ class GlassMorphismBottomSheet extends StatefulWidget {
   }
 
   @override
-  State<GlassMorphismBottomSheet> createState() => _GlassMorphismBottomSheetState();
+  State<GlassMorphismBottomSheet> createState() =>
+      _GlassMorphismBottomSheetState();
 }
 
 class _GlassMorphismBottomSheetState extends State<GlassMorphismBottomSheet>
@@ -133,14 +133,14 @@ class _GlassMorphismBottomSheetState extends State<GlassMorphismBottomSheet>
 
   @override
   Widget build(BuildContext context) {
-    final theme = GlassMorphismTheme.of(context);
     final mediaQuery = MediaQuery.of(context);
 
     return AnimatedBuilder(
       animation: _animationController,
       builder: (context, child) {
         return Transform.translate(
-          offset: Offset(0, _slideAnimation.value * mediaQuery.size.height * 0.3),
+          offset:
+              Offset(0, _slideAnimation.value * mediaQuery.size.height * 0.3),
           child: Opacity(
             opacity: _opacityAnimation.value,
             child: Container(

@@ -20,12 +20,12 @@ dev_dependencies:
   mockito: ^5.4.4
   build_runner: ^2.4.9
 
-flutter:
-  # This package is a plugin package.
-  plugin:
-    platforms:
-      android:
-        package: com.example.flutter_glass_morphism
-        pluginClass: FlutterGlassMorphismPlugin
-      ios:
-        pluginClass: FlutterGlassMorphismPlugin
+# flutter:
+#   # This package is a plugin package.
+#   plugin:
+#     platforms:
+#       android:
+#         package: com.example.flutter_glass_morphism
+#         pluginClass: FlutterGlassMorphismPlugin
+#       ios:
+#         pluginClass: FlutterGlassMorphismPlugin
